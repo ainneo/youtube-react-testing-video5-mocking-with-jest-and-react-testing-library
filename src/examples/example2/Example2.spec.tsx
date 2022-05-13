@@ -7,12 +7,14 @@ import { DataGrid } from '@material-ui/data-grid';
 //jest.mock(module we want to mock, callback)
 //if we want to mock other things from the module we can use ...jest.requireActual()
 //in the callnack return the mocked modules
-
 jest.mock('@material-ui/data-grid', () => ({
   ...jest.requireActual('@material-ui/data-grid'),
   DataGrid: jest.fn(() => <div>Table</div>),
 }));
 
+//initalize our mocked module for use:
+//in order to use our new mocked DataGrid, we need to
+//import mocked from ts-jest-utils and pass in our DataGrid...
 const mockedDataGrid = mocked(DataGrid);
 
 describe('MyComponent', () => {
