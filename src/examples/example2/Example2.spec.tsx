@@ -3,6 +3,11 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { mocked } from 'ts-jest/utils';
 import { DataGrid } from '@material-ui/data-grid';
 
+//this is how we mock modules:
+//jest.mock(module we want to mock, callback)
+//if we want to mock other things from the module we can use ...jest.requireActual()
+//in the callnack return the mocked modules
+
 jest.mock('@material-ui/data-grid', () => ({
   ...jest.requireActual('@material-ui/data-grid'),
   DataGrid: jest.fn(() => <div>Table</div>),
