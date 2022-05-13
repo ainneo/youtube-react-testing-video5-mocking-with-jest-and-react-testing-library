@@ -30,6 +30,7 @@ describe('MyComponent', () => {
     expect(myOnMoney).toHaveBeenCalledWith(33);
   });
 
+  //only import props that you have in your component
   it('renders table passing the expected props', () => {
     render(<Example2 onMoney={jest.fn()} />);
     expect(mockedDataGrid).toHaveBeenCalledTimes(1);
